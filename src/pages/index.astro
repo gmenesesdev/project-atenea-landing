@@ -13,10 +13,6 @@ import "../styles/global.css";
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link
-            rel="stylesheet"
-            href="../../node_modules/leaflet/dist/leaflet.css"
-        />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
@@ -35,38 +31,5 @@ import "../styles/global.css";
     <!-- <script is:inline src="./assets/vendor/preline/dist/index.js"></script> -->
     <script>
         import "preline/dist/preline.js";
-    </script>
-    <script>
-        import "lodash/lodash.min.js";
-    </script>
-    <script>
-        import "leaflet/dist/leaflet.js";
-    </script>
-    <script>
-        window.addEventListener("load", () => {
-            const map = L.map("hs-grayscale-leaflet", {
-                center: [-32.565096, -71.269056],
-                zoom: 14,
-                maxBounds: [
-                    [-32.569588, -71.274381], // Suroeste
-                    [-32.560604, -71.263731], // Noreste
-                ],
-                maxBoundsViscosity: 1.0,
-            });
-
-            L.tileLayer(
-                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-                {
-                    maxZoom: 19,
-                    minZoom: 13, // ← mejor ajustado
-                    attribution:
-                        '© <a href="https://carto.com/attributions">CARTO</a>',
-                }
-            ).addTo(map);
-
-            L.marker([-32.565096, -71.269056])
-                .bindPopup("Atenea, tu nuevo estilo.")
-                .addTo(map);
-        });
     </script>
 </html>
