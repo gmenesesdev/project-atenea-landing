@@ -5,6 +5,11 @@
 /* Plugins */
 @plugin "@tailwindcss/forms";
 
+.g-recaptcha > div {
+    transform: scale(0.95);
+    transform-origin: center;
+  }
+
 .hs-leaflet.leaflet-touch .leaflet-control-layers,
 .hs-leaflet.leaflet-touch .leaflet-bar {
     border-width: 0px;
