@@ -5,6 +5,14 @@
 /* Plugins */
 @plugin "@tailwindcss/forms";
 
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+.brand-name {
+  font-family: 'Dancing Script', cursive;
+}
+
 .g-recaptcha > div {
     transform: scale(0.95);
     transform-origin: center;
