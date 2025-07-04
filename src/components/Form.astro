@@ -231,46 +231,52 @@
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        // Se leen las variables de entorno públicas de Astro
-        const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
-        const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
-        const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
-        // Inicializa EmailJS con tu User ID (public key)
-        (function () {
-            emailjs.init({ publicKey: publicKey }); // Reemplaza con tu User ID de EmailJS
-        })();
 
-        // Espera a que todo el contenido de la página esté cargado
+    <script>
+        // Importamos Toastify y su CSS desde el paquete NPM
+        import Toastify from "toastify-js";
+
         document.addEventListener("DOMContentLoaded", function () {
+            // Se leen las variables de entorno públicas de Astro
+            const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+            const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+            const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+
+            // Inicializa EmailJS
+            emailjs.init({ publicKey: publicKey });
+
             const contactForm = document.querySelector("form");
 
             if (contactForm) {
                 contactForm.addEventListener("submit", function (event) {
-                    // Previene el comportamiento por defecto del formulario (que es recargar la página)
                     event.preventDefault();
 
-                    // Usa el servicio de EmailJS para enviar los datos del formulario.
-                    // La librería detecta automáticamente el widget de reCAPTCHA dentro del formulario.
                     emailjs.sendForm(serviceID, templateID, this).then(
-                        (response) => {
-                            // Esta función se ejecuta si el envío fue exitoso
-                            console.log(
-                                "SUCCESS!",
-                                response.status,
-                                response.text
-                            );
-                            alert("¡Mensaje enviado correctamente!");
-                            contactForm.reset(); // Limpia los campos del formulario
-                            grecaptcha.reset(); // Limpia la casilla de reCAPTCHA
+                        () => {
+                            // --- Toast de Éxito con clases de Tailwind ---
+                            Toastify({
+                                text: "¡Mensaje enviado correctamente!",
+                                duration: 3000,
+                                gravity: "top",
+                                position: "right",
+                                // Usamos className para aplicar clases de Tailwind
+                                className: "toast-success",
+                            }).showToast();
+
+                            contactForm.reset();
+                            grecaptcha.reset();
                         },
                         (error) => {
-                            // Esta función se ejecuta si hubo un error
                             console.log("FAILED...", error);
-                            // El error más común será por no completar el reCAPTCHA
-                            alert(
-                                "Ocurrió un error al enviar el mensaje. Por favor, completa el 'No soy un robot' y vuelve a intentarlo."
-                            );
+                            // --- Toast de Error con clases de Tailwind ---
+                            Toastify({
+                                text: "Error: Por favor, completa el reCAPTCHA.",
+                                duration: 4000,
+                                gravity: "top",
+                                position: "right",
+                                // Usamos className para aplicar clases de Tailwind
+                                className: "toast-error",
+                            }).showToast();
                         }
                     );
                 });
