@@ -5,18 +5,24 @@
 /* Plugins */
 @plugin "@tailwindcss/forms";
 
+@theme {
+    --color-atenea: #ed8eda
+
+
+}
+
 body {
-  font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
 .brand-name {
-  font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
 }
 
 .g-recaptcha > div {
     transform: scale(0.95);
     transform-origin: center;
-  }
+}
 
 .hs-leaflet.leaflet-touch .leaflet-control-layers,
 .hs-leaflet.leaflet-touch .leaflet-bar {
@@ -103,7 +109,8 @@ body {
     padding: 12px 20px;
     color: #ffffff;
     display: inline-block;
-    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12),
+        0 10px 36px -4px rgba(77, 96, 232, 0.3);
     /* background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
     background: linear-gradient(135deg, #73a5ff, #5477f5); */
     position: fixed;
@@ -150,10 +157,6 @@ body {
 .toastify-rounded {
     border-radius: 25px;
 }
-
-/* src/styles/global.css */
-
-/* ... tus otros estilos globales ... */
 
 /* Estilo para el Toast de Éxito */
 .toast-success {
