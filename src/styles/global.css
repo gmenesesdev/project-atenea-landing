@@ -9,6 +9,7 @@
     /* --color-atenea: #d2bad9; */
     --color-atenea: #efdcf4;
     --color-atenea-letter: #1c1881;
+    --color-atenea-letter-lighter: #524fb5;
     --color-atenea-icon: #2f3973;
     --color-atenea-icon-hover: #5363c1;
     --color-atenea-icon-darker: #293260;
@@ -28,83 +29,17 @@ body {
     transform-origin: center;
 }
 
-.hs-leaflet.leaflet-touch .leaflet-control-layers,
-.hs-leaflet.leaflet-touch .leaflet-bar {
-    border-width: 0px;
+/* Valor para móviles (ejemplo) */
+[id] {
+  scroll-margin-top: 30px;
 }
 
-.hs-leaflet.leaflet-touch .leaflet-bar a {
-    line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+/* Valor para pantallas md o más grandes (ajusta el breakpoint si es necesario) */
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 40px; 
+  }
 }
-
-.hs-leaflet.leaflet-touch .leaflet-bar a:first-child,
-.hs-leaflet.leaflet-touch .leaflet-bar a:last-child {
-    border-radius: 8px;
-}
-
-.hs-leaflet .leaflet-control-zoom-in,
-.hs-leaflet .leaflet-control-zoom-out {
-    font-weight: 400;
-    font-size: 18px;
-    color: #1f2937;
-    text-indent: 0px;
-}
-
-.hs-leaflet .leaflet-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.hs-leaflet .leaflet-bar a {
-    border-width: 0;
-}
-
-.hs-leaflet .leaflet-bar a:hover,
-.hs-leaflet .leaflet-bar a:focus {
-    background-color: #e5e7eb;
-}
-
-.hs-leaflet .leaflet-popup-content-wrapper,
-.hs-leaflet .leaflet-popup-tip {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-.hs-leaflet .leaflet-popup-tip {
-    border-radius: 4px;
-}
-
-.hs-leaflet.leaflet-container a.leaflet-popup-close-button {
-    top: -10px;
-    right: -10px;
-    border-radius: 9999px;
-    background-color: #f3f4f6;
-    color: #1f2937;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.hs-leaflet.leaflet-container a.leaflet-popup-close-button:hover {
-    background-color: #f3f4f6;
-}
-
-.hs-leaflet-unstyled-popover .leaflet-popup-content-wrapper {
-    display: flex;
-}
-
-.hs-leaflet-unstyled-popover .leaflet-popup-content {
-    padding: 0;
-    margin: 0;
-    background: none;
-    line-height: normal;
-    border-radius: 0;
-    font-size: inherit;
-    min-height: auto;
-}
-
-/* src/styles/global.css */
 
 /*
   Clase base que aplica las propiedades críticas de posicionamiento y transición.
