@@ -6,9 +6,10 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
-    --color-atenea: #ed8eda
-
-
+    --color-atenea: #d2bad9;
+    --color-atenea-letter: #1c1881;
+    --color-atenea-icon: #2f3973;
+    --color-atenea-clear: #fffffe;
 }
 
 body {
