@@ -1,3 +1,8 @@
+---
+import products from "../data/products.json";
+import ProductCard from "./cards/ProductCard.astro";
+---
+
 <!-- Card Blog -->
 <div
     class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gradient-to-r from-[#efdcf4] -50% via-[#fafafa] 50% to-[#efdcf4] 150%"
@@ -18,84 +23,7 @@
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card -->
-        <a class="group flex flex-col focus:outline-hidden" href="#">
-            <div
-                class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden"
-            >
-                <img
-                    class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-                    src="https://images.unsplash.com/photo-1701992679010-7cf5dfee49d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Blog Image"
-                />
-            </div>
-
-            <div class="mt-7">
-                <h3
-                    class="text-xl font-semibold text-atenea-letter group-hover:text-atenea-letter-lighter"
-                >
-                    Shampoo
-                </h3>
-                <p class="mt-3 text-atenea-letter-lighter">
-                    Shampoo de alta calidad para el cuidado del cabello, con
-                    ingredientes naturales y sin sulfatos.
-                </p>
-            </div>
-        </a>
-        <!-- End Card -->
-
-        <!-- Card -->
-        <a class="group flex flex-col focus:outline-hidden" href="#">
-            <div
-                class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden"
-            >
-                <img
-                    class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-                    src="https://images.unsplash.com/photo-1695632918735-c78986bf3b39?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Blog Image"
-                />
-            </div>
-
-            <div class="mt-7">
-                <h3
-                    class="text-xl font-semibold text-atenea-letter group-hover:text-atenea-letter-lighter"
-                >
-                    Acondicionador
-                </h3>
-                <p class="mt-3 text-atenea-letter-lighter">
-                    Acondicionador nutritivo que deja el cabello suave y
-                    manejable, ideal para todo tipo de cabello.
-                </p>
-            </div>
-        </a>
-        <!-- End Card -->
-
-        <!-- Card -->
-        <a class="group flex flex-col focus:outline-hidden" href="#">
-            <div
-                class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden"
-            >
-                <img
-                    class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-                    src="https://images.unsplash.com/photo-1707910393318-8f97ea71736a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Blog Image"
-                />
-            </div>
-
-            <div class="mt-7">
-                <h3
-                    class="text-xl font-semibold text-atenea-letter group-hover:text-atenea-letter-lighter"
-                >
-                    Serum Capilar
-                </h3>
-                <p class="mt-3 text-atenea-letter-lighter">
-                    Serum capilar revitalizante que fortalece y protege el
-                    cabello, dejándolo brillante y saludable.
-                </p>
-            </div>
-        </a>
-        <!-- End Card -->
+        {products.map((product) => <ProductCard {...product} />)}
     </div>
     <!-- End Grid -->
 </div>
-<!-- End Card Blog -->
