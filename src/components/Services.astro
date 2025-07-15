@@ -1,16 +1,16 @@
 ---
-import AlisadoPhotonico from "./Services_Cards/Alisado_Photonico.astro"
-import MasajeRulos from "./Services_Cards/Masaje_Rulos.astro"
-import CorteCabello from "./Services_Cards/Corte_Cabello.astro"
-import MasajeReposicionCapilar from "./Services_Cards/Masaje_Reposicion_Capilar.astro"
-import MasajeCapilarAnticaspa from "./Services_Cards/Masaje_Capilar_Anticaspa.astro"
+import services from "../data/services.json";
 ---
 
-<!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gradient-to-r from-[#efdcf4] -50% via-[#fafafa] 50% to-[#efdcf4] 150%" id="services">
+<div
+    class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gradient-to-r from-[#efdcf4] -50% via-[#fafafa] 50% to-[#efdcf4] 150%"
+    id="services"
+>
     <!-- Title -->
     <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-        <h2 class="text-2xl text-atenea-letter font-bold md:text-4xl md:leading-tight">
+        <h2
+            class="text-2xl text-atenea-letter font-bold md:text-4xl md:leading-tight"
+        >
             Servicios
         </h2>
         <p class="mt-1 text-atenea-letter-lighter">
@@ -18,14 +18,72 @@ import MasajeCapilarAnticaspa from "./Services_Cards/Masaje_Capilar_Anticaspa.as
         </p>
     </div>
     <!-- End Title -->
+
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <AlisadoPhotonico />
-        <MasajeRulos />
-        <MasajeReposicionCapilar />
-        <MasajeCapilarAnticaspa />
-        <CorteCabello />
+        {
+            services.map((service) => (
+                <div class="group flex flex-col h-full bg-atenea-clear-darker border border-atenea-icon shadow-sm rounded-xl">
+                    <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
+                        <img
+                            class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
+                            src={service.image}
+                            alt={service.title}
+                        />
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-xl font-semibold text-atenea-letter">
+                            {service.title}
+                        </h3>
+                        <p class="mt-3 text-atenea-letter-lighter">
+                            {service.description}
+                        </p>
+                        <div
+                            id={`hs-show-hide-collapse-heading-${service.id}`}
+                            class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300"
+                            aria-labelledby={`hs-show-hide-collapse-${service.id}`}
+                        >
+                            {service.details.map((paragraph) => (
+                                <p class="text-atenea-letter-lighter mt-3">
+                                    {paragraph}
+                                </p>
+                            ))}
+                        </div>
+                        <p class="mt-2">
+                            <button
+                                type="button"
+                                class="hs-collapse-toggle inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 decoration-2 hover:text-blue-700 hover:underline focus:outline-hidden focus:underline focus:text-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-600 dark:focus:text-blue-600"
+                                id={`hs-show-hide-collapse-${service.id}`}
+                                aria-expanded="false"
+                                aria-controls={`hs-show-hide-collapse-heading-${service.id}`}
+                                data-hs-collapse={`#hs-show-hide-collapse-heading-${service.id}`}
+                            >
+                                <span class="hs-collapse-open:hidden">
+                                    Ver más
+                                </span>
+                                <span class="hs-collapse-open:block hidden">
+                                    Ver menos
+                                </span>
+                                <svg
+                                    class="hs-collapse-open:rotate-180 shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            ))
+        }
     </div>
     <!-- End Grid -->
 </div>
-<!-- End Card Blog -->

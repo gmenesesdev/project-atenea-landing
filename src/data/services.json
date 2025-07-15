@@ -1,0 +1,50 @@
+[
+    {
+        "id": "alisado_photonico",
+        "title": "Alisado Photónico",
+        "description": "Alisado capilar con tecnología de fotones, ideal para todo tipo de cabello.",
+        "details": [
+            "En este servicio se usan productos específicos: Richee, Groove Profesional y Felps, todos registrados en el ISP Chile.",
+            "Esto resulta en un alisado inmediato donde preocuparse de planchar al día siguiente ya no será necesario."
+        ],
+        "image": "https://plus.unsplash.com/premium_photo-1669675935836-8ed23a3be37e?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "corte_cabello",
+        "title": "Corte de cabello",
+        "description": "Servicio de corte de cabello para niños, jóvenes y adultos.",
+        "details": [
+            "Con este servicio, buscamos que el joven cliente participe en la toma de decisión en su corte de preferencia, así otorgamos seguridad al joven cliente y potenciamos su autoestima.",
+            "Para nuestros clientes adultos, ofrecemos un servicio de \"barbería clásica\", donde los clientes buscan orden, simpleza y seguridad en el proceso del corte y el resultado final."
+        ],
+        "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "masaje_reposicion_capilar",
+        "title": "Masaje Reposición Capilar",
+        "description": "Servicio especializado para cabellos tratados químicamente (decoloraciones, alisados, tinturas de amoniaco, permanentes, entre otros servicios).",
+        "details": [
+            "Este procedimiento conlleva terapia en frío, ultrasonido y fortalecimiento de la fibra capilar, restaurando la elasticidad del cabello y así poder hermosearlo cosméticamente.",
+            "Es un proceso de alrededor de 1 mes como inicio, puesto que varía según el daño químico que tenga."
+        ],
+        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "masaje_capilar_anticaspa",
+        "title": "Masaje Capilar Anticaspa y Fortalecimiento Capilar",
+        "description": "Servicio especializado para tratar la caspa y la caída capilar.",
+        "details": [
+            "Este servicio se desarrolla con luz photonica roja y azul para así potenciar las cremas capilares, logrando la disminución de la caspa y el fortalecimiento del cabello."
+        ],
+        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": "masaje_rulos",
+        "title": "Masaje para cabellos con rulos",
+        "description": "Servicio para cabellos con rulos o ondas donde no se encuentran definidos y dan un aspecto de cabello sin forma.",
+        "details": [
+            "En este servicio se hidrata el cabello, se nutre, se definen los rulos y se enseña a los clientes los cuidados correctos con los productos específicos para su necesidad capilar y así potenciar su belleza capilar."
+        ],
+        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+]
