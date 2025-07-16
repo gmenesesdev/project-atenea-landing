@@ -2,19 +2,16 @@
     {
         "titulo": "Shampoo",
         "descripcion": "Shampoo de alta calidad para el cuidado del cabello, con ingredientes naturales y sin sulfatos.",
-        "imagen": "https://images.unsplash.com/photo-1701992679010-7cf5dfee49d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "link": "#"
+        "imagen": "https://images.unsplash.com/photo-1701992679010-7cf5dfee49d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "titulo": "Acondicionador",
         "descripcion": "Acondicionador nutritivo que deja el cabello suave y manejable, ideal para todo tipo de cabello.",
-        "imagen": "https://images.unsplash.com/photo-1695632918735-c78986bf3b39?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "link": "#"
+        "imagen": "https://images.unsplash.com/photo-1695632918735-c78986bf3b39?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "titulo": "Serum Capilar",
         "descripcion": "Serum capilar revitalizante que fortalece y protege el cabello, dejándolo brillante y saludable.",
-        "imagen": "https://images.unsplash.com/photo-1707910393318-8f97ea71736a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "link": "#"
+        "imagen": "https://images.unsplash.com/photo-1707910393318-8f97ea71736a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ]
