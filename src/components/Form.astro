@@ -1,3 +1,7 @@
+---
+// ContactForm.astro
+---
+
 <!-- Contact Us -->
 <div
     class="max-w-screen px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-gradient-to-r from-[#efdcf4] -50% via-[#fafafa] 50% to-[#efdcf4] 150%"
@@ -22,7 +26,7 @@
                     Formulario de contacto
                 </h2>
 
-                <form>
+                <form id="contactForm" novalidate>
                     <div class="grid gap-4">
                         <!-- Grid -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -32,9 +36,15 @@
                                     type="text"
                                     name="name"
                                     id="name"
-                                    class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none"
+                                    class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none transition-colors"
                                     placeholder="Nombre"
+                                    required
                                 />
+                                <div
+                                    id="nameError"
+                                    class="text-red-500 text-sm mt-1 hidden"
+                                >
+                                </div>
                             </div>
 
                             <div>
@@ -45,9 +55,15 @@
                                     type="text"
                                     name="lastname"
                                     id="lastname"
-                                    class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                                    class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none transition-colors"
                                     placeholder="Apellido"
+                                    required
                                 />
+                                <div
+                                    id="lastnameError"
+                                    class="text-red-500 text-sm mt-1 hidden"
+                                >
+                                </div>
                             </div>
                         </div>
                         <!-- End Grid -->
@@ -59,20 +75,32 @@
                                 name="email"
                                 id="email"
                                 autocomplete="email"
-                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none"
+                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none transition-colors"
                                 placeholder="Correo"
+                                required
                             />
+                            <div
+                                id="emailError"
+                                class="text-red-500 text-sm mt-1 hidden"
+                            >
+                            </div>
                         </div>
 
                         <div>
                             <label for="phone" class="sr-only">Teléfono</label>
                             <input
-                                type="text"
+                                type="tel"
                                 name="phone"
                                 id="phone"
-                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none"
+                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none transition-colors"
                                 placeholder="Teléfono"
+                                required
                             />
+                            <div
+                                id="phoneError"
+                                class="text-red-500 text-sm mt-1 hidden"
+                            >
+                            </div>
                         </div>
 
                         <div>
@@ -82,11 +110,18 @@
                                 id="details"
                                 name="details"
                                 rows="4"
-                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none"
-                                placeholder="Detalles"></textarea>
+                                class="py-2.5 sm:py-3 px-4 block w-full border-atenea-icon rounded-lg sm:text-sm focus:border-atenea-icon-hover focus:ring-atenea-icon-hover disabled:opacity-50 disabled:pointer-events-none transition-colors"
+                                placeholder="Detalles"
+                                required></textarea>
+                            <div
+                                id="detailsError"
+                                class="text-red-500 text-sm mt-1 hidden"
+                            >
+                            </div>
                         </div>
                     </div>
                     <!-- End Grid -->
+
                     <div
                         class="flex items-center justify-center w-full py-2.5 sm:py-3 mt-4 border-atenea-icon rounded-lg bg-none"
                     >
@@ -97,13 +132,25 @@
                         >
                         </div>
                     </div>
+                    <div
+                        id="recaptchaError"
+                        class="text-red-500 text-sm mt-1 hidden text-center"
+                    >
+                    </div>
 
                     <div class="mt-4 grid">
                         <button
                             type="submit"
-                            class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-atenea-icon text-white hover:bg-atenea-icon-hover focus:outline-hidden focus:bg-atenea-icon-darker disabled:opacity-50 disabled:pointer-events-none"
-                            >Enviar</button
+                            id="submitBtn"
+                            class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-atenea-icon text-white hover:bg-atenea-icon-hover focus:outline-hidden focus:bg-atenea-icon-darker disabled:opacity-50 disabled:pointer-events-none transition-colors"
                         >
+                            <span id="submitText">Enviar</span>
+                            <div
+                                id="submitLoader"
+                                class="animate-spin rounded-full h-4 w-4 border-b-2 border-white hidden"
+                            >
+                            </div>
+                        </button>
                     </div>
 
                     <div class="mt-3 text-center">
@@ -152,6 +199,7 @@
                     </div>
                 </div>
                 <!-- End Icon Block -->
+
                 <!-- Icon Block -->
                 <div class="flex gap-x-7 py-6">
                     <svg
@@ -228,72 +276,28 @@
                 <!-- End Icon Block -->
             </div>
         </div>
+
         <div class="mt-12 flex justify-center">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d999.6909394313758!2d-71.26955415042295!3d-32.56495692516998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689b30055a07a79%3A0x1d617332a69d4674!2sPasaje%20Pedro%20de%20Vizcarra%2046!5e0!3m2!1ses-419!2scl!4v1751697454045!5m2!1ses-419!2scl"
                 class="w-2xl h-96 border-0 rounded-lg shadow-lg"
                 allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
         </div>
     </div>
-    <!-- Al final de tu archivo Form.astro, antes de cerrar el último </div> -->
-    <script
-        type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <script>
-        // Importamos Toastify y su CSS desde el paquete NPM
-        import Toastify from "toastify-js";
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // Se leen las variables de entorno públicas de Astro
-            const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
-            const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
-            const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
-
-            // Inicializa EmailJS
-            emailjs.init({ publicKey: publicKey });
-
-            const contactForm = document.querySelector("form");
-
-            if (contactForm) {
-                contactForm.addEventListener("submit", function (event) {
-                    event.preventDefault();
-
-                    emailjs.sendForm(serviceID, templateID, this).then(
-                        () => {
-                            // --- Toast de Éxito con clases de Tailwind ---
-                            Toastify({
-                                text: "¡Mensaje enviado correctamente!",
-                                duration: 3000,
-                                gravity: "top",
-                                position: "right",
-                                // Usamos className para aplicar clases de Tailwind
-                                className: "toast-success",
-                            }).showToast();
-
-                            contactForm.reset();
-                            grecaptcha.reset();
-                        },
-                        (error) => {
-                            console.log("FAILED...", error);
-                            // --- Toast de Error con clases de Tailwind ---
-                            Toastify({
-                                text: "Error: Por favor, completa el reCAPTCHA.",
-                                duration: 4000,
-                                gravity: "top",
-                                position: "right",
-                                // Usamos className para aplicar clases de Tailwind
-                                className: "toast-error",
-                            }).showToast();
-                        }
-                    );
-                });
-            }
-        });
-    </script>
 </div>
+
+<!-- Scripts -->
+<script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    import "../js/contact-form.js";
+</script>
 <!-- End Contact Us -->
