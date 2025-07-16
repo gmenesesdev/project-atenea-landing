@@ -1,4 +1,5 @@
 ---
+// src/pages/index.astro
 import Navigation from "../components/Navigation.astro";
 import Slider from "../components/Slider.astro";
 import History from "../components/History.astro";
@@ -12,28 +13,44 @@ import '@fontsource/dancing-script';
 import "../styles/global.css";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Atenea, Tu Nuevo Estilo</title>
-    </head>
-    <body>
-        <Navigation />
-        <Slider />
-        <History />
-        <Services />
-        <Products />
-        <Form />
-        <Footer />
-        <Whatsapp />
-    </body>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Atenea, Tu Nuevo Estilo</title>
+	</head>
+	<body data-hs-scrollspy="#navbar-nav" data-hs-scrollspy-offset="80">
+		<Navigation />
+		<Slider />
 
-    <!-- Preline UI -->
-    <!-- <script is:inline src="./assets/vendor/preline/dist/index.js"></script> -->
-    <script>
-        import "preline/dist/preline.js";
-    </script>
+		<div id="about-us">
+			<History />
+		</div>
+		<div id="services">
+			<Services />
+		</div>
+		<div id="products">
+			<Products />
+		</div>
+		<div id="contact">
+			<Form />
+		</div>
+
+		<Footer />
+		<Whatsapp />
+
+		<script>
+			// Se recomienda importar el script así para que Astro lo procese correctamente.
+			import "preline/dist/preline.js";
+
+            // Si la importación directa no funciona por alguna razón, puedes usar este script alternativo:
+            /*
+            const script = document.createElement('script');
+            script.src = './node_modules/preline/dist/preline.js';
+            document.body.appendChild(script);
+            */
+		</script>
+	</body>
 </html>
