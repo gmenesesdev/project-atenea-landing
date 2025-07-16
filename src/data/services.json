@@ -7,7 +7,7 @@
             "En este servicio se usan productos específicos: Richee, Groove Profesional y Felps, todos registrados en el ISP Chile.",
             "Esto resulta en un alisado inmediato donde preocuparse de planchar al día siguiente ya no será necesario."
         ],
-        "image": "https://plus.unsplash.com/premium_photo-1669675935836-8ed23a3be37e?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "alisado_photonico"
     },
     {
         "id": "corte_cabello",
@@ -17,7 +17,7 @@
             "Con este servicio, buscamos que el joven cliente participe en la toma de decisión en su corte de preferencia, así otorgamos seguridad al joven cliente y potenciamos su autoestima.",
             "Para nuestros clientes adultos, ofrecemos un servicio de \"barbería clásica\", donde los clientes buscan orden, simpleza y seguridad en el proceso del corte y el resultado final."
         ],
-        "image": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "cuidados_post_alisados"
     },
     {
         "id": "masaje_reposicion_capilar",
@@ -27,7 +27,7 @@
             "Este procedimiento conlleva terapia en frío, ultrasonido y fortalecimiento de la fibra capilar, restaurando la elasticidad del cabello y así poder hermosearlo cosméticamente.",
             "Es un proceso de alrededor de 1 mes como inicio, puesto que varía según el daño químico que tenga."
         ],
-        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "masaje_reposicion_capilar"
     },
     {
         "id": "masaje_capilar_anticaspa",
@@ -36,7 +36,7 @@
         "details": [
             "Este servicio se desarrolla con luz photonica roja y azul para así potenciar las cremas capilares, logrando la disminución de la caspa y el fortalecimiento del cabello."
         ],
-        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "masaje_capilar_anticaspa_y_fortalecimiento_capilar"
     },
     {
         "id": "masaje_rulos",
@@ -45,6 +45,6 @@
         "details": [
             "En este servicio se hidrata el cabello, se nutre, se definen los rulos y se enseña a los clientes los cuidados correctos con los productos específicos para su necesidad capilar y así potenciar su belleza capilar."
         ],
-        "image": "https://plus.unsplash.com/premium_photo-1661476221058-6557616722c8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "masaje_cabello_rulos"
     }
 ]
