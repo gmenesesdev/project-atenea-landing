@@ -8,49 +8,42 @@ import Products from "../components/Products.astro";
 import Form from "../components/Form.astro";
 import Footer from "../components/Footer.astro";
 import Whatsapp from "../components/Whatsapp.astro";
-import '@fontsource/outfit/300.css';
-import '@fontsource/dancing-script';
+import "@fontsource/outfit/300.css";
+import "@fontsource/dancing-script";
 import "../styles/global.css";
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/images/logo_png.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Atenea, Tu Nuevo Estilo</title>
-	</head>
-	<body data-hs-scrollspy="#navbar-nav" data-hs-scrollspy-offset="80">
-		<Navigation />
-		<Slider />
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="/images/logo_png.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Atenea, Tu Nuevo Estilo</title>
+    </head>
+    <body data-hs-scrollspy="#navbar-nav" data-hs-scrollspy-offset="80">
+        <Navigation />
+        <Slider />
 
-		<div id="about-us">
-			<History />
-		</div>
-		<div id="services">
-			<Services />
-		</div>
-		<div id="products">
-			<Products />
-		</div>
-		<div id="contact">
-			<Form />
-		</div>
+        <div id="about-us">
+            <History />
+        </div>
+        <div id="services">
+            <Services />
+        </div>
+        <div id="products">
+            <Products />
+        </div>
+        <div id="contact">
+            <Form />
+        </div>
 
-		<Footer />
-		<Whatsapp />
+        <Footer />
+        <Whatsapp />
 
-		<script>
-			// Se recomienda importar el script así para que Astro lo procese correctamente.
-			import "preline/dist/preline.js";
-
-            // Si la importación directa no funciona por alguna razón, puedes usar este script alternativo:
-            /*
-            const script = document.createElement('script');
-            script.src = './node_modules/preline/dist/preline.js';
-            document.body.appendChild(script);
-            */
-		</script>
-	</body>
+        <script>
+            // Se recomienda importar el script así para que Astro lo procese correctamente.
+            import "preline/dist/preline.js";
+        </script>
+    </body>
 </html>
