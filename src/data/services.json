@@ -10,14 +10,14 @@
         "image": "alisado_photonico"
     },
     {
-        "id": "corte_cabello",
-        "title": "Corte de cabello",
-        "description": "Servicio de corte de cabello para niños, jóvenes y adultos.",
+        "id": "masaje_capilar",
+        "title": "Masaje Capilar",
+        "description": "Servicio de masaje capilar relajante y revitalizante.",
         "details": [
-            "Con este servicio, buscamos que el joven cliente participe en la toma de decisión en su corte de preferencia, así otorgamos seguridad al joven cliente y potenciamos su autoestima.",
-            "Para nuestros clientes adultos, ofrecemos un servicio de \"barbería clásica\", donde los clientes buscan orden, simpleza y seguridad en el proceso del corte y el resultado final."
+            "Este servicio es ideal para relajar el cuero cabelludo y revitalizar el cabello. Se utiliza una combinación de técnicas de masaje y productos específicos para mejorar la salud del cabello.",
+            "Los resultados son inmediatos y se recomienda realizarlo de forma regular para mantener la salud capilar."
         ],
-        "image": "cuidados_post_alisados"
+        "image": "masaje_capilar"
     },
     {
         "id": "masaje_reposicion_capilar",

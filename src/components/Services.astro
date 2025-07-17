@@ -1,18 +1,5 @@
 ---
 import services from "../data/services.json";
-import { Image } from "astro:assets";
-
-const importedImages = import.meta.glob("../assets/images/*.{jpg,png}", {
-    eager: true,
-});
-const imageMap: Record<string, any> = {};
-for (const path in importedImages) {
-    let filename = path.split("/").pop();
-    filename = filename?.replace(/\.(jpg|png)$/i, "");
-    if (filename) {
-        imageMap[filename] = (importedImages[path] as any).default;
-    }
-}
 ---
 
 <div
@@ -42,12 +29,12 @@ for (const path in importedImages) {
                             <source
                                 srcset={`/images/${service.image}.webp`}
                                 type="image/webp"
-                                class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
+                                class="size-fit absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
                             />
                             <img
                                 src={`/images/${service.image}.jpg`}
                                 alt={service.title}
-                                class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
+                                class="size-fit absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
                                 loading="lazy"
                             />
                         </picture>
