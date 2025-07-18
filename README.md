@@ -77,7 +77,25 @@ Landing page moderna y responsiva para **Atenea, Tu Nuevo Estilo**, un centro de
 project-atenea-landing/
 ├── public/
 │   ├── images/
-│   │   ├── logo.png
+│   │   ├── slider/
+│   │   │   ├── slide1-desktop.jpeg
+│   │   │   ├── slide1-desktop.webp
+│   │   │   ├── slide1-desktop@2x.jpeg
+│   │   │   ├── slide1-desktop@2x.webp
+│   │   │   ├── slide1-mobile.jpeg
+│   │   │   ├── slide1-mobile.webp
+│   │   │   ├── slide1-mobile@2x.jpeg
+│   │   │   ├── slide1-mobile@2x.webp
+│   │   │   ├── slide2-*.jpeg/webp
+│   │   │   ├── slide3-*.jpeg/webp
+│   │   │   └── generar-slides.ps1
+│   │   ├── products/
+│   │   │   ├── shampoo.jpeg
+│   │   │   ├── shampoo.webp
+│   │   │   ├── acondicionador.jpeg
+│   │   │   ├── acondicionador.webp
+│   │   │   ├── serum-capilar.jpeg
+│   │   │   └── serum-capilar.webp
 │   │   ├── alisado_photonico.jpg
 │   │   ├── alisado_photonico.webp
 │   │   ├── masaje_capilar.jpg
@@ -87,12 +105,16 @@ project-atenea-landing/
 │   │   ├── masaje_capilar_anticaspa_y_fortalecimiento_capilar.jpg
 │   │   ├── masaje_capilar_anticaspa_y_fortalecimiento_capilar.webp
 │   │   ├── masaje_cabello_rulos.jpg
-│   │   └── masaje_cabello_rulos.webp
+│   │   ├── masaje_cabello_rulos.webp
+│   │   ├── logo.png
+│   │   ├── logo_png.png
+│   │   └── owner.jpg
 │   └── favicon.svg
 ├── src/
 │   ├── components/
 │   │   ├── cards/
-│   │   │   └── ProductCard.astro
+│   │   │   ├── ProductCard.astro
+│   │   │   └── Owner.astro
 │   │   ├── Footer.astro
 │   │   ├── Form.astro
 │   │   ├── History.astro
@@ -103,7 +125,8 @@ project-atenea-landing/
 │   │   └── Whatsapp.astro
 │   ├── data/
 │   │   ├── products.json
-│   │   └── services.json
+│   │   ├── services.json
+│   │   └── slider.json
 │   ├── js/
 │   │   ├── contact-form.js
 │   │   └── navbar.js
@@ -143,7 +166,7 @@ Los colores están definidos en `src/styles/global.css`:
 
 ### Contenido Dinámico
 
-#### Servicios (services.json)
+#### Servicios ([`src/data/services.json`](src/data/services.json))
 ```json
 {
   "id": "service-id",
@@ -157,12 +180,35 @@ Los colores están definidos en `src/styles/global.css`:
 }
 ```
 
-#### Productos (products.json)
+#### Productos ([`src/data/products.json`](src/data/products.json))
 ```json
 {
   "titulo": "Nombre del Producto",
   "descripcion": "Descripción del producto",
-  "imagen": "URL_de_la_imagen"
+  "imagen": "products/nombre_imagen_sin_extension"
+}
+```
+
+#### Slider ([`src/data/slider.json`](src/data/slider.json))
+```json
+{
+  "id": 1,
+  "alt": "Descripción de la imagen",
+  "mobileWebp": "/images/slider/slide1-mobile.webp",
+  "mobileWebp2x": "/images/slider/slide1-mobile@2x.webp",
+  "mobileJpeg": "/images/slider/slide1-mobile.jpeg",
+  "mobileJpeg2x": "/images/slider/slide1-mobile@2x.jpeg",
+  "desktopWebp": "/images/slider/slide1-desktop.webp",
+  "desktopWebp2x": "/images/slider/slide1-desktop@2x.webp",
+  "desktopJpeg": "/images/slider/slide1-desktop.jpeg",
+  "desktopJpeg2x": "/images/slider/slide1-desktop@2x.jpeg",
+  "src": "/images/slider/slide1-desktop.webp",
+  "width": "1200",
+  "height": "600",
+  "loading": "eager|lazy",
+  "fetchpriority": "high|auto",
+  "category": "Categoría",
+  "title": "Título del slide"
 }
 ```
 
@@ -233,7 +279,7 @@ Los colores están definidos en `src/styles/global.css`:
 
 3. **Obtener Site Key**
    - Copia la "Site Key" (clave del sitio)
-   - Configúrala en .env:
+   - Configúrala en `.env`:
    ```env
    PUBLIC_RECAPTCHA_SITE_KEY="tu_site_key"
    ```
@@ -260,25 +306,27 @@ npm run astro            # Comandos de Astro CLI
 
 ### 🎭 Hero/Slider
 - **Carrusel automático** con controles manuales
-- **Imágenes de Unsplash** con lazy loading
-- **Textos superpuestos** con efectos de transición
-- **Responsive** para todos los dispositivos
+- **Imágenes responsivas** con múltiples tamaños (mobile/desktop)
+- **Formatos optimizados** WebP con fallback a JPEG
+- **Prioridad de carga** fetchpriority="high" para primera imagen
+- **Lazy loading** para imágenes secundarias
 
 ### 📖 Sobre Nosotros
 - **Historia de la empresa** con misión y visión
 - **Diseño en dos columnas** responsivo
 - **Iconografía personalizada** para cada sección
+- **Foto de la propietaria** con información personal
 
 ### 💇‍♀️ Servicios
 - **Grid responsivo** de tarjetas de servicios
-- **Imágenes WebP** con fallback a JPG
-- **Expandible "Ver más"** con animaciones
+- **Imágenes WebP** optimizadas con fallback a JPG
+- **Expandible "Ver más"** con animaciones suaves
 - **5 servicios principales** de la empresa
 
 ### 🛍️ Productos
-- **Catálogo visual** con imágenes de Unsplash
+- **Catálogo visual** con imágenes optimizadas
 - **Tarjetas responsivas** con efectos hover
-- **Información detallada** de cada producto
+- **Picture element** para carga optimizada de imágenes
 
 ### 📞 Contacto
 - **Formulario validado** con EmailJS
@@ -290,13 +338,13 @@ npm run astro            # Comandos de Astro CLI
 
 ### 🔗 Footer
 - **Logo circular** centrado
-- **Enlaces a redes sociales** (Instagram)
+- **Enlaces a redes sociales** (Instagram, Facebook)
 - **Créditos del desarrollador**
 
 ### 💬 WhatsApp
-- **Botón flotante** fijo en esquina inferior derecha
+- **Botón flotante** fijo con animación ping
 - **Enlace directo** a WhatsApp con mensaje predefinido
-- **Número**: +56 9 8316 8752
+- **Número**: +56 9 3947 2521
 
 ## 🎨 Estilos y Animaciones
 
@@ -335,6 +383,50 @@ html {
     transform: scale(0.95);
     transform-origin: center;
 }
+```
+
+## 🖼️ Optimización de Imágenes
+
+### Script automatizado para Slider
+Se incluye un script PowerShell [`public/images/slider/generar-slides.ps1`](public/images/slider/generar-slides.ps1) para generar automáticamente todas las versiones optimizadas:
+
+```powershell
+# Instalar sharp-cli globalmente
+npm install -g sharp-cli
+
+# Ejecutar script desde la carpeta slider
+cd public/images/slider
+./generar-slides.ps1
+```
+
+### Tamaños generados automáticamente:
+- **Mobile**: 400w, 800w @2x
+- **Desktop**: 1200w, 2400w @2x
+- **Formatos**: JPEG y WebP para cada tamaño
+
+### Picture Element optimizado:
+```astro
+<picture class="absolute inset-0 w-full h-full">
+  <source
+    media="(max-width: 768px)"
+    srcset="/images/slider/slide1-mobile.webp 400w, /images/slider/slide1-mobile@2x.webp 800w"
+    type="image/webp"
+    sizes="100vw"
+  />
+  <source
+    media="(min-width: 769px)"
+    srcset="/images/slider/slide1-desktop.webp 1200w, /images/slider/slide1-desktop@2x.webp 2400w"
+    type="image/webp"
+    sizes="100vw"
+  />
+  <img
+    src="/images/slider/slide1-desktop.webp"
+    alt="Descripción"
+    class="w-full h-full object-cover object-center"
+    loading="eager"
+    fetchpriority="high"
+  />
+</picture>
 ```
 
 ## 🌐 Despliegue
@@ -484,7 +576,7 @@ jobs:
    - Settings → Pages → Custom domain
    - Agregar: `atenea-estilo.cl`
 
-2. **Crear archivo `CNAME`** en carpeta public:
+2. **Crear archivo `CNAME`** en carpeta `public`:
    ```
    atenea-estilo.cl
    ```
@@ -550,6 +642,17 @@ npm run build
 <meta name="generator" content="Astro">
 ```
 
+### Preload crítico implementado
+```html
+<link
+  rel="preload"
+  as="image"
+  href="/images/slider/slide1-desktop.webp"
+  imagesrcset="/images/slider/slide1-desktop.webp 1200w, /images/slider/slide1-desktop@2x.webp 2400w"
+  imagesizes="100vw"
+/>
+```
+
 ### Structured Data (recomendado agregar)
 ```json
 {
@@ -563,7 +666,7 @@ npm run build
     "addressRegion": "Valparaíso",
     "addressCountry": "Chile"
   },
-  "telephone": "+56983168752",
+  "telephone": "+56939472521",
   "url": "https://atenea-estilo.cl"
 }
 ```
@@ -594,6 +697,37 @@ console.log(import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY);
 # Verificar que esté en carpeta public/
 # Verificar formato (JPG/WebP)
 ```
+
+#### Slider muestra Render Delay alto
+```bash
+# Verificar que la primera imagen tenga fetchpriority="high"
+# Verificar que esté en el preload del <head>
+# Verificar que use decoding="sync" en la primera imagen
+```
+
+## 📊 Optimizaciones Implementadas
+
+### ✅ **Slider Optimizado**:
+- **Múltiples tamaños**: Mobile (400w, 800w) y Desktop (1200w, 2400w)
+- **Formatos modernos**: WebP con fallback a JPEG
+- **Carga priorizada**: fetchpriority="high" para LCP
+- **Script automatizado**: PowerShell para generar versiones
+
+### ✅ **Productos Optimizados**:
+- **Picture element**: Siguiendo patrón de Services
+- **Lazy loading**: Para todas las imágenes
+- **Rutas consistentes**: /images/products/nombre.jpeg
+
+### ✅ **Servicios**:
+- **Expandible**: Funcionalidad "Ver más/Ver menos"
+- **Picture element**: WebP con fallback JPG
+- **Hover effects**: Transiciones suaves
+
+### ✅ **Formulario de Contacto**:
+- **Validación completa**: Tiempo real con feedback visual
+- **EmailJS integrado**: Envío asíncrono
+- **reCAPTCHA**: Protección contra spam
+- **Toast notifications**: Feedback inmediato
 
 ## 🤝 Contribuciones
 
@@ -634,12 +768,42 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 ## 📞 Contacto del Cliente
 
 **Atenea, Tu Nuevo Estilo**
-- **Email**: ateanatunuevoestilo@gmail.com
-- **Teléfono**: +56 9 8316 8752
-- **WhatsApp**: [Chat directo](https://wa.me/56983168752)
+- **Email**: karina.aaraya.osorio@gmail.com
+- **Teléfono**: +56 9 3947 2521
+- **WhatsApp**: [Chat directo](https://wa.me/56939472521)
 - **Dirección**: Pasaje Pedro Vizcarra #46, Aires de Catapilco, Catapilco, Zapallar, Chile
 - **Instagram**: [@atenea_tu_nuevo_estilo_](https://www.instagram.com/atenea_tu_nuevo_estilo_/)
+- **Facebook**: [Karina Araya](https://www.facebook.com/karina.araya.31149)
 
 ---
 
-⭐ **¡Si este proyecto te fue útil, considera darle una estrella en GitHub!** ⭐
+## 🔄 Cambios Realizados en esta Versión
+
+### 🎭 **Slider Completamente Optimizado**:
+- **Arquitectura responsive**: Múltiples tamaños para mobile y desktop
+- **JSON estructurado**: Con todas las variaciones de imagen
+- **Script automatizado**: PowerShell para generar versiones optimizadas
+- **LCP optimizado**: fetchpriority="high" y preload en primera imagen
+
+### 🛍️ **Productos Mejorados**:
+- **Picture element**: Siguiendo exactamente el patrón de Services
+- **Extensiones corregidas**: De .jpg a .jpeg para consistencia
+- **Rutas organizadas**: Carpeta products/ separada
+
+### 💇‍♀️ **Servicios Expandibles**:
+- **Funcionalidad completa**: "Ver más/Ver menos" con animaciones
+- **Imágenes optimizadas**: Picture element con WebP + JPG
+
+### 📧 **Formulario Robusto**:
+- **Validación avanzada**: Tiempo real con regex patterns
+- **EmailJS funcional**: Con template personalizado
+- **reCAPTCHA integrado**: Protección completa contra spam
+- **Toast notifications**: Feedback visual inmediato
+
+### 🎨 **UI/UX Mejorada**:
+- **WhatsApp flotante**: Con animación ping
+- **Navegación sticky**: Con scrollspy activo
+- **Footer completo**: Con redes sociales
+- **Tipografía consistente**: Outfit + Dancing Script
+
+⭐ **¡Si este proyecto te fue útil, considera darle una estrella
