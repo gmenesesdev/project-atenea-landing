@@ -2,16 +2,16 @@
     {
         "titulo": "Shampoo",
         "descripcion": "Shampoo de alta calidad para el cuidado del cabello, con ingredientes naturales y sin sulfatos.",
-        "imagen": "/images/products/shampoo"
+        "imagen": "products/shampoo"
     },
     {
         "titulo": "Acondicionador",
         "descripcion": "Acondicionador nutritivo que deja el cabello suave y manejable, ideal para todo tipo de cabello.",
-        "imagen": "/images/products/acondicionador"
+        "imagen": "products/acondicionador"
     },
     {
         "titulo": "Serum Capilar",
         "descripcion": "Serum capilar revitalizante que fortalece y protege el cabello, dejándolo brillante y saludable.",
-        "imagen": "/images/products/serum-capilar"
+        "imagen": "products/serum-capilar"
     }
 ]
