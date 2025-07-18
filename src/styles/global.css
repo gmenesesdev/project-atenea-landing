@@ -114,11 +114,6 @@ body {
     @apply bg-red-600 text-white font-medium rounded-lg shadow-lg;
 }
 
-/* Oculta todos los slides excepto el primero por defecto */
-.hs-carousel-body .hs-carousel-slide:not(:first-child) {
-    display: none;
-}
-
 /* Una vez que el carrusel se inicializa, Preline gestionará la visibilidad */
 /* Si usas Tailwind, las clases como w-full ya deberían manejar el ancho y flex-shrink */
 /* Esta regla es más un fallback o para casos donde display:block sea necesario después de la inicialización */
